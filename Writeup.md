@@ -248,13 +248,14 @@ This score measures how well the neural network can detect the target from far a
 | Experiment # | Learning rate |	Batch size |	Optimizer |	number of epochs	| Steps per epoch |	validation steps per epoch |	iou1o | iou1h |	iou2o |	iou2h |	iou3o |	iou3h	| finalIOU |	finalScore |
 | --- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
 |1 |0.004 |	50 |	Adam |	20 |	83 |	24 |	0.29 |	0.81 |	0.71 |	0 |	0.38 |	0.11 |	0.46 |	0.33 |
-|2 |0.002 |	30 |	Adam |	40 |	138 |	39 |	0.34 |	0.87 |	0.76 |	0 |	0.43 |	0.17 |	0.52 |	0.39 |
-|3 |0.002 |	30 |	Nadam |	40 |	138 |	39 |	0.37 |	0.91 |	0.76 |	0 |	0.45 |	0.25 |	0.58 |	0.44 |
-|4 |0.002 |	45 |	Nadam |	40 |	92 |	26 |	0.36 |	0.91 |	0.73 |	0 |	0.44 |	0.24 |	0.58 |	0.43 |
-|5 |0.002 |	25 |	Nadam |	45 |	165 |	47 |	0.32 |	0.91 |	0.70 |	0 |	0.39 |	0.27 |	0.59 |	0.43 |
+|2 |0.002 |	30 |	Adam |	40 |	138 |	39 |	0.34 |	0.87 |	**0.76** |	0 |	0.43 |	0.17 |	0.52 |	0.39 |
+|3 |0.002 |	30 |	Nadam |	40 |	138 |	39 |	**0.37** |	**0.91** |	**0.76** |	0 |	**0.45** |	0.25 |	0.58 |	**0.44** |
+|4 |0.002 |	45 |	Nadam |	40 |	92 |	26 |	0.36 |	**0.91** |	0.73 |	0 |	0.44 |	0.24 |	0.58 |	0.43 |
+|5 |0.002 |	25 |	Nadam |	45 |	165 |	47 |	0.32 |	**0.91** |	0.70 |	0 |	0.39 |	**0.27** |	**0.59** |	0.43 |
 
+The model of Experiment 3 is chosen as the final model.
 
-Following images are organized in the following way. For each experiment, the convergence history is shown first, with number of epochs on the x-axis and the loss function for both training and validation on the y-axis. This is followed by a sample of results from the experiments described above. On the left is the input sample image, taken by the drone, the middle image is the labeled ground truth, and the right image is the output of the model. The hero is labeled in blue and other people are labeled in green. Red represents the background.  
+The images below are organized in the following way. For each experiment, the convergence history is shown first, with number of epochs on the x-axis and the loss function for both training and validation on the y-axis. This is followed by a sample of results from the experiments described above. On the left is the input sample image, taken by the drone, the middle image is the labeled ground truth, and the right image is the output of the model. The hero is labeled in blue and other people are labeled in green. Red represents the background.  
  
 **Experiment 1**
 
