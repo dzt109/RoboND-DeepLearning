@@ -104,8 +104,6 @@ Due to its lower computational cost, we use **(depthwise) separable convolutions
 
 The **middle layer** is a 1x1 convolutional layer with a kernel size of 1 and a stride of 1. If we wish to feed the output of a convolutional layer into a fully connected layer, we flatten it into a 2D tensor. This results in the loss of spatial information, because pixel location information is lost. This problem is eliminated by introducing this 1x1 convolution.
 
-We can avoid that by using 1x1 convolutions.
-
 **Decoder layers** provide upsampling encoded layers back to higher dimension. The method used for achieving upsampling in this process is called *bilinear upsampling.* Bilinear upsampling is a resampling technique that utilizes the weighted average of four nearest known pixels, located diagonally to a given pixel, to estimate a new pixel intensity value. 
 
 In all these layers, we use **batch normalization**. This means that instead of just normalizing the inputs to the network, we normalize the inputs to each layer within the network. During training, each layer's inputs are normalized using the mean and variance of the values in the current mini-batch. The benefits of doing this includes higher learning rates, faster learning, and an element of regularization for the network parameters.  
