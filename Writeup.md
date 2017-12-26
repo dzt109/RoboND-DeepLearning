@@ -159,7 +159,7 @@ def fcn_model(inputs, num_classes):
 
 ## Training, Predicting and Scoring ##
 
-###Model Hyperparameters
+### Model Hyperparameters
 
 Following are the hyperparameters of the model that need to be tuned in order to get good predictive performance from it. 
 
@@ -209,7 +209,7 @@ In order to be able to use all validation data available, validation steps per e
 This refers to the number of parallel threads that will be spawned to train the model. The experiment was run on a `p2.xlarge` instance on the Amazon Web Server. It's assumed that this has two processors. Therefore, any attempt to parallelize the training with a number of workers greater than 2 will not lead to any speedup. In fact, it will slow down the computations due to overheads. Therefore, the number of workers was fixed to 1. 
    
 
-###Parameter tuning
+### Parameter tuning
 
 In this project, parameters were tuned by brute force until a good enough model was obtained. The table below shows five experiments that were run with different values of hyperparameters. It was found that Experiment 3 has the best overall score, although Experiment 4 and 5 are close.
 
@@ -244,14 +244,11 @@ This score measures how well the neural network can detect the target from far a
 * `finalIOU` -  IoU for the subset of dataset that definitely includes the hero
 * `finalScore` - This is `finalIOU` times `weight`, where `weight = all true positives / (all true positives + all false positives and negatives)`
 
- 
 
-Experiment #| Learning rate |	Batch size |	Optimizer |	number of epochs	| Steps per epoch |	validation steps per epoch |	iou1o | iou1h |	iou2o |	iou2h |	iou3o |	iou3h	| finalIOU |	finalScore |
-
-|-----|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
-
+| Experiment # | Learning rate |	Batch size |	Optimizer |	number of epochs	| Steps per epoch |	validation steps per epoch |	iou1o | iou1h |	iou2o |	iou2h |	iou3o |	iou3h	| finalIOU |	finalScore |
+| --- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
 |1 |0.004 |	50 |	Adam |	20 |	83 |	24 |	0.29 |	0.81 |	0.71 |	0 |	0.38 |	0.11 |	0.46 |	0.33 |
-|2  |0.002 |	30 |	Adam |	40 |	138 |	39 |	0.34 |	0.87 |	0.76 |	0 |	0.43 |	0.17 |	0.52 |	0.39 |
+|2 |0.002 |	30 |	Adam |	40 |	138 |	39 |	0.34 |	0.87 |	0.76 |	0 |	0.43 |	0.17 |	0.52 |	0.39 |
 |3 |0.002 |	30 |	Nadam |	40 |	138 |	39 |	0.37 |	0.91 |	0.76 |	0 |	0.45 |	0.25 |	0.58 |	0.44 |
 |4 |0.002 |	45 |	Nadam |	40 |	92 |	26 |	0.36 |	0.91 |	0.73 |	0 |	0.44 |	0.24 |	0.58 |	0.43 |
 |5 |0.002 |	25 |	Nadam |	45 |	165 |	47 |	0.32 |	0.91 |	0.70 |	0 |	0.39 |	0.27 |	0.59 |	0.43 |
