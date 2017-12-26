@@ -112,7 +112,7 @@ In all these layers, we use **batch normalization**. This means that instead of 
 
 Some **skip connections** are introduced between the encoder layer and the decoder layer to improve the resolution of the results. 
 
-The figure below shows the architecture of the network implemented for this model, where E1,E2 and E3 denote the three encoder layers, while D1, D2 and D3 denote the three decoder layers. 
+The figure below shows the architecture of the network implemented for this model, where E1,E2 and E3 denote the three encoder layers, while D1, D2 and D3 denote the three decoder layers. MID denotes the 1x1 convolutional layer. 
  
 ![alt text][image_1]
 
@@ -253,7 +253,7 @@ This score measures how well the neural network can detect the target from far a
 |4 |0.002 |	45 |	Nadam |	40 |	92 |	26 |	0.36 |	**0.91** |	0.73 |	0 |	0.44 |	0.24 |	0.58 |	0.43 |
 |5 |0.002 |	25 |	Nadam |	45 |	165 |	47 |	0.32 |	**0.91** |	0.70 |	0 |	0.39 |	**0.27** |	**0.59** |	0.43 |
 
-The model of Experiment 3 is chosen as the final model.
+The model of Experiment 3 is chosen as the final model. This model has a final score of 0.44, which is greater than the requirement of 0.4. 
 
 The images below are organized in the following way. For each experiment, the convergence history is shown first, with number of epochs on the x-axis and the loss function for both training and validation on the y-axis. This is followed by a sample of results from the experiments described above. On the left is the input sample image, taken by the drone, the middle image is the labeled ground truth, and the right image is the output of the model. The hero is labeled in blue and other people are labeled in green. Red represents the background.  
  
@@ -306,4 +306,4 @@ The best overall score obtained in the above experiments was 0.44, leaving room 
 
 **Model capability**
 
-The model is tasked with semantic segmentation with three classes: background, hero, other people. It would be interesting to extend this to more classes: trees, grass, building, street, vehicle, etc. This might require a lot more data collection and a model with more layers and/or training effort. This could be a step towards a fully autonomous drone.   
+The model is tasked with semantic segmentation with three classes: background, hero, other people. This model is unable to recognize objects such as dog, cat, car, etc. instead of a human. It would be interesting to extend this to more classes: trees, grass, building, street, vehicle, etc. This might require a lot more data collection and a model with more layers and/or training effort. This could be a step towards a fully autonomous drone.   
